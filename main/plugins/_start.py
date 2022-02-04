@@ -1,5 +1,10 @@
 #Github.com/Vasusen-code
 
+st = """Buraya klonlamak için herhangi bir mesajın bağlantısını gönder, Özel kanal mesajı için önce davet bağlantısını gönder.
+
+Yardım: @trbotlistesidestek
+Geliştirici: @trbotlistesi"""
+
 import os
 from .. import bot as Drone
 from telethon import events, Button
@@ -44,5 +49,23 @@ async def remt(event):
   
 @Drone.on(events.NewMessage(incoming=True, pattern=f"{S}"))
 async def start(event):
-    await start_srb(event)
+    await event.reply(st, 
+                      buttons=[
+                              [Button.inline("Kapak ayarla.", data="set"),
+                               Button.inline("kapak kaldır.", data="rem")],
+                              [Button.url("Geliştirici", url="t.me/MaheshChauhan")]])
+                              
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
