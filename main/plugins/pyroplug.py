@@ -16,10 +16,10 @@ async def _(bot, event):
             await Bot.copy_message(event.chat.id, chat, msg_id)
             await event.delete()
         except ValueError:
-            await event.edit("Send me only message link or Invite of private channel.")
+            await event.edit("Bana Sadece Mesaj Bağlantısı Gönder veya Özel Kanalı Davet et.")
         except Exception as e:
             if 'username' in str(e):
-                await event.edit("Couldn't clone message, maybe i am banned from the given chat.")
+                await event.edit("Mesaj Klonlanamadı, Belki Verilen Sohbetten Yasaklandım.")
             else:
                 await event.edit(str(e))
             
